@@ -1,6 +1,6 @@
 {
   "name": "backend-batteries",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "description": "All that you need for backend application",
   "main": "index.js",
