@@ -2,11 +2,14 @@
   "name": "backend-batteries",
   "version": "0.0.2",
   "type": "module",
-  "description": "All that you need for backend application",
-  "main": "index.js",
+  "description": "Almost all that you need for your backend application",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Tests are in progress\" && exit 0",
+    "compile": "tsup",
+    "build": "npm run compile"
   },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Entsllor/backend-batteries-js.git"
@@ -34,6 +37,18 @@
   "devDependencies": {
     "@types/dotenv": "^8.2.0",
     "@types/express": "^4.17.17",
+    "express": "^4.18.2",
+    "tsup": "^7.2.0",
     "typescript": "^5.2.2"
+  },
+  "tsup": {
+    "entry": [
+      "./index.ts"
+    ],
+    "outDir": "./dist",
+    "clean": true,
+    "format": "esm",
+    "dts": true,
+    "target": "esnext"
   }
 }

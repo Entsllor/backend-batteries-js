@@ -1,4 +1,4 @@
-import {NextFunction, Request, RequestHandler, Response} from "@types/express";
+import {NextFunction, Request, RequestHandler, Response} from "express";
 import vine from "@vinejs/vine";
 import {Infer, SchemaTypes} from "@vinejs/vine/build/src/types";
 
