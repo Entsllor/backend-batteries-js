@@ -1,6 +1,6 @@
 {
   "name": "backend-batteries",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "type": "module",
   "description": "Almost all that you need for your backend application",
   "scripts": {
@@ -8,6 +8,9 @@
     "compile": "tsup",
     "build": "npm run compile"
   },
+  "files": [
+    "dist/**/*"
+  ],
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "repository": {
