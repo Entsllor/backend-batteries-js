@@ -1,6 +1,6 @@
 {
   "name": "backend-batteries",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "type": "module",
   "description": "Almost all that you need for your backend application",
   "scripts": {
@@ -43,7 +43,7 @@
   },
   "tsup": {
     "entry": [
-      "./index.ts"
+      "./src/index.ts"
     ],
     "outDir": "./dist",
     "clean": true,
