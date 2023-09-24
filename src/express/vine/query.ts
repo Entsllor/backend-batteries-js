@@ -1,6 +1,7 @@
-import {NextFunction, Request, RequestHandler, Response} from "express";
+import type {NextFunction, Request, RequestHandler, Response} from "express";
+import type {Infer, SchemaTypes} from "@vinejs/vine/build/src/types";
+
 import vine from "@vinejs/vine";
-import {Infer, SchemaTypes} from "@vinejs/vine/build/src/types";
 
 export function Query<Schema extends SchemaTypes, P, Req, Res, Locals extends Record<string, any>>(schema: Schema): RequestHandler<P, Res, Req, Infer<Schema>, Locals> {
     const validator = vine.compile(schema)
