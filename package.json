@@ -4,9 +4,10 @@
   "type": "module",
   "description": "Almost all that you need for your backend application",
   "scripts": {
-    "test": "vitest --run",
+    "typecheck": "vitest typecheck --run",
+    "test": "npm run typecheck && vitest --run",
     "compile": "tsup",
-    "build": "npm run compile"
+    "build": "npm run test && npm run compile"
   },
   "files": [
     "dist/**/*"
