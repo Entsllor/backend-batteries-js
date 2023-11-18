@@ -1,6 +1,6 @@
 {
   "name": "backend-batteries",
-  "version": "0.1.2",
+  "version": "0.1.4",
   "type": "module",
   "description": "Some utils that should be built-in",
   "scripts": {
@@ -8,7 +8,7 @@
     "test": "vitest --run",
     "compile": "tsup",
     "build": "npm run test && npm run compile",
-    "publish": "npm run build && npm publish"
+    "pub": "npm run build && npm publish"
   },
   "files": [
     "dist/**/*"
