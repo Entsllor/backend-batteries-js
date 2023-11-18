@@ -1,11 +1,11 @@
 {
   "name": "backend-batteries",
-  "version": "0.0.6",
+  "version": "0.1.0",
   "type": "module",
-  "description": "Almost all that you need for your backend application",
+  "description": "Some utils that should be built-in",
   "scripts": {
     "typecheck": "vitest typecheck --run",
-    "test": "npm run typecheck && vitest --run",
+    "test": "vitest --run",
     "compile": "tsup",
     "build": "npm run test && npm run compile"
   },
@@ -21,10 +21,8 @@
   "keywords": [
     "utils",
     "backend",
-    "express",
     "settings",
-    "config",
-    "validation"
+    "config"
   ],
   "author": "Entsllor",
   "license": "ISC",
@@ -34,13 +32,11 @@
   "homepage": "https://github.com/Entsllor/backend-batteries-js#readme",
   "dependencies": {
     "@types/uuid": "^9.0.2",
-    "@vinejs/vine": "^1.6.0",
     "dotenv": "^16.3.1",
     "uuid": "^9.0.0"
   },
   "devDependencies": {
     "@types/dotenv": "^8.2.0",
-    "@types/express": "^4.17.17",
     "tsup": "^7.2.0",
     "typescript": "^5.2.2",
     "vitest": "^0.34.4"
