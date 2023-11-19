@@ -18,7 +18,7 @@ export abstract class AppException<ExtraType extends Record<string, any> = objec
     status: number = 400
     description?: string = undefined
     extra?: ExtraType
-    callback = undefined;
+    callback?: ExceptionOptionsType<any>['callback'];
 
     getDescription() {
         return this.description
