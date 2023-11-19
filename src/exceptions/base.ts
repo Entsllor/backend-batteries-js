@@ -27,7 +27,7 @@ export abstract class AppException<ExtraType extends Record<string, any> = objec
     asJson() {
         return {
             status: this.status,
-            message: toSnakeCase(this.constructor.name).toUpperCase(),
+            type: toSnakeCase(this.constructor.name).toUpperCase(),
             description: this.getDescription(),
             ...this.extra
         }
