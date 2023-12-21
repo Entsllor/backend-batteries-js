@@ -1,5 +1,3 @@
-import {config} from "dotenv";
-
 function removePrefix(key: string, prefix: string): string {
     if (prefix && key.startsWith(prefix)) {
         return key.slice(prefix.length)
@@ -11,7 +9,6 @@ export function initAppSettings(rawSettings: object, options?: {
     prefix?: string,
     prepareKey?: (key: string) => string
 }) {
-    config()
     const prepareKey = options?.prepareKey ?? (key => key.toUpperCase())
     return Object.fromEntries(
         Object.entries(rawSettings)
