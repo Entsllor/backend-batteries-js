@@ -8,8 +8,8 @@
     "src/**/*.test.ts"
   ],
   "compilerOptions": {
-    "target": "es6",
-    "module": "commonjs",
+    "target": "ESNext",
+    "module": "CommonJS",
     "rootDir": "./src",
     "outDir": "./dist",
     "esModuleInterop": true,

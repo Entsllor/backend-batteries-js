@@ -6,18 +6,18 @@ export function mapArray<T, U extends keyof T>(array: T[], key: U): Record<strin
     return Object.fromEntries((array ?? []).map(i => [i[key], i])) as any;
 }
 
-export function valuesOf<T>(obj: { [s: string | number | symbol]: T } | T[] | undefined | null): T[] {
+export function valuesOf<T>(obj: {[s: string | number | symbol]: T} | T[] | undefined | null): T[] {
     if (!obj) {
-        return []
+        return [];
     }
     return Object.values(obj);
 }
 
-export function keysOf<T extends any[]>(obj: T): string[]
-export function keysOf<T extends object>(obj: T): (keyof T)[]
+export function keysOf<T extends any[]>(obj: T): string[];
+export function keysOf<T extends object>(obj: T): (keyof T)[];
 export function keysOf<T extends any>(obj: T | undefined | null): string[] {
     if (!obj) {
-        return [] as any
+        return [] as any;
     }
     return Object.keys(obj) as any;
 }
