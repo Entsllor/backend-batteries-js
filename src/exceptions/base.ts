@@ -30,7 +30,7 @@ export abstract class AppException<ExtraType extends Record<string, any> = objec
             options = {message: options}
         }
         super(options?.message ?? '')
-        this.message = options?.message ?? this.message;
+        this.message = options?.message ?? '';
         this.status = options?.status ?? this.status
         this.extra = options?.extra
         this.callback = options?.callback
