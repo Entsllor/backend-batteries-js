@@ -1,5 +1,5 @@
 function toSnakeCase(text: string) {
-    return ((text.at(0)?.toLowerCase() ?? '')
+    return ((text[0]?.toLowerCase() ?? '')
         + text.slice(1)).replace(/[A-Z]/g, char => `_${char.toLowerCase()}`);
 }
 
@@ -24,8 +24,11 @@ export abstract class AppException<ExtraType extends Record<string, any> = objec
         return this.description
     }
 
-    constructor(options?: ExceptionOptionsType<ExtraType>) {
-        this.description = options?.description ?? this.description
+    constructor(options?: string | ExceptionOptionsType<ExtraType>) {
+        if (typeof options === "string") {
+            options = {description: options}
+        }
+        this.description = options?.description ?? this.description;
         this.status = options?.status ?? this.status
         this.extra = options?.extra
         this.callback = options?.callback
