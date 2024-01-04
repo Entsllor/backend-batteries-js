@@ -4,7 +4,7 @@ function toSnakeCase(text: string) {
 }
 
 type ExceptionOptionsType<ExtraType> = {
-    description?: string,
+    message?: string,
     status?: number,
 
     // extra data that will be displayed to user on errors
@@ -14,31 +14,34 @@ type ExceptionOptionsType<ExtraType> = {
     callback?: ((err: AppException) => void);
 }
 
-export abstract class AppException<ExtraType extends Record<string, any> = object> {
+export abstract class AppException<ExtraType extends Record<string, any> = object> extends Error implements Error {
     status: number = 400
-    description?: string = undefined
-    extra?: ExtraType
+    name: string; // auto-field. Usually value is className in upper snake_case. AppException => APP_EXCEPTION
+    message: string; //
+    extra?: ExtraType;
     callback?: ExceptionOptionsType<any>['callback'];
 
-    getDescription() {
-        return this.description
+    getMessage() {
+        return this.message
     }
 
     constructor(options?: string | ExceptionOptionsType<ExtraType>) {
         if (typeof options === "string") {
-            options = {description: options}
+            options = {message: options}
         }
-        this.description = options?.description ?? this.description;
+        super(options?.message ?? '')
+        this.message = options?.message ?? this.message;
         this.status = options?.status ?? this.status
         this.extra = options?.extra
         this.callback = options?.callback
+        this.name = this.constructor.name
     }
 
     asJson() {
         return {
             status: this.status,
-            type: toSnakeCase(this.constructor.name).toUpperCase(),
-            description: this.getDescription(),
+            error: toSnakeCase(this.name).toUpperCase(),
+            message: this.getMessage(),
             ...this.extra
         }
     }

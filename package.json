@@ -1,6 +1,6 @@
 {
   "name": "backend-batteries",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "type": "module",
   "description": "Some utils that should be built-in",
   "scripts": {
