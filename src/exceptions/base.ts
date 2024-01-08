@@ -36,11 +36,11 @@ export abstract class AppException<ExtraType extends Record<string, any> = objec
         this.name = this.constructor.name;
     }
 
-    asJson() {
+    toJSON() {
         return {
             status: this.status,
             error: toSnakeCase(this.name).toUpperCase(),
-            message: this.getMessage(),
+            message: this.getMessage() || undefined,
             ...this.extra,
         };
     }
