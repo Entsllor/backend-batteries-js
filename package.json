@@ -1,12 +1,12 @@
 {
   "name": "backend-batteries",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "type": "module",
   "description": "Some utils that should be built-in",
   "scripts": {
     "typecheck": "vitest typecheck --run",
     "test": "vitest --run",
-    "compile": "tsup",
+    "compile": "tsup src/index.ts --format cjs,esm --dts --clean",
     "style": "npx prettier ./src -w --log-level warn",
     "build": "npm run style && npm run test && npm run compile",
     "pub": "npm run build && npm publish"
@@ -14,8 +14,16 @@
   "files": [
     "dist/**/*"
   ],
-  "main": "dist/index.js",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Entsllor/backend-batteries-js.git"
