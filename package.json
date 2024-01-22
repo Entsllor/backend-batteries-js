@@ -1,6 +1,6 @@
 {
   "name": "backend-batteries",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "type": "module",
   "description": "Some utils that should be built-in",
   "scripts": {
@@ -14,9 +14,9 @@
   "files": [
     "dist/**/*"
   ],
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
-  "types": "dist/index.d.ts",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "require": "./dist/index.cjs",
