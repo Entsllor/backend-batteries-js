@@ -1,3 +1,1 @@
-import {v4 as uuid4} from "uuid";
-
-export {uuid4};
+export {randomUUID as uuid4} from "node:crypto";

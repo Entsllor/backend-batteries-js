@@ -1,7 +1,3 @@
 # Backend Batteries
-> all that you need
+> some utilities for your backend application, bloat-free, without additional dependencies
 
-Most of these utilities can be used by your backend applications.
-It's a good idea to keep them all in one place for convenience.
-
-This package was created as a pet project.

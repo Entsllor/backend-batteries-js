@@ -1,6 +1,6 @@
 {
   "name": "backend-batteries",
-  "version": "0.2.4",
+  "version": "0.3.0",
   "type": "module",
   "description": "Some utils that should be built-in",
   "scripts": {
@@ -40,10 +40,6 @@
     "url": "https://github.com/Entsllor/backend-batteries-js/issues"
   },
   "homepage": "https://github.com/Entsllor/backend-batteries-js#readme",
-  "dependencies": {
-    "@types/uuid": "^9.0.2",
-    "uuid": "^9.0.0"
-  },
   "devDependencies": {
     "tsup": "^7.2.0",
     "typescript": "^5.2.2",

@@ -13,7 +13,10 @@ type ExceptionOptionsType<ExtraType> = {
     callback?: (err: AppException) => void;
 };
 
-export abstract class AppException<ExtraType extends Record<string, any> = object> extends Error implements Error {
+export abstract class AppException<ExtraType extends Record<string, any> = {[field: string]: any}>
+    extends Error
+    implements Error
+{
     status: number = 400;
     name: string; // auto-field. Usually value is className in upper snake_case. AppException => APP_EXCEPTION
     message: string; //
@@ -36,12 +39,12 @@ export abstract class AppException<ExtraType extends Record<string, any> = objec
         this.name = this.constructor.name;
     }
 
-    toJSON() {
+    toJSON(): {status: number; error: string; message?: string} & ExtraType {
         return {
             status: this.status,
             error: toSnakeCase(this.name).toUpperCase(),
             message: this.getMessage() || undefined,
-            ...this.extra,
+            ...(this.extra as ExtraType),
         };
     }
 }
