@@ -5,9 +5,7 @@ export class BadRequest extends AppException {
     message = "Server cannot process this request";
 }
 
-export class Forbidden extends AppException<{
-    test: number;
-}> {
+export class Forbidden extends AppException {
     status = 403;
     message = "Access denied";
 }
